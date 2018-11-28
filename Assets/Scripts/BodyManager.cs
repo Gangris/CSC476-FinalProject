@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BodyManager : MonoBehaviour {
+public class BodyManager : MonoBehaviour
+{
+    public float facing = 0.0f;
 
-	// Use this for initialization
 	void Start () {
 		
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
+	void Update ()
+	{
+	    
 	}
 }

@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TurretManager : MonoBehaviour {
+public class TurretManager : MonoBehaviour
+{
+    public float facing = 0.0f;
 
 	// Use this for initialization
 	void Start () {
