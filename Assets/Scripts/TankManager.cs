@@ -1,14 +1,22 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class TankManager : MonoBehaviour
 {
+    public GameObject round;
+
     public Rigidbody rb;
     public GameObject tankBody;
     public GameObject tankTurret;
-    public int baseMoveMultiplyer = 4;
-    public int upgradeMoveMultiplyer = 0;
+    public List<GameObject> playerRounds = new List<GameObject>();
+    public float baseMoveMultiplier = 4;
+    public float upgradeMoveMultiplier = 0;
+    public float baseRoundVelocity = 4;
+    public float upgradeRoundVelocity = 0;
+    public float baseRoundDuration = 1;
+    public float upgradeRoundDuration = 0;
 
 	void Start ()
 	{
@@ -23,7 +31,7 @@ public class TankManager : MonoBehaviour
 	
 	void Update () {
 	    MovementInput();
-	    UpdateTurretPosition();
+	    UpdateTurret();
 	}
 
     void MovementInput()
@@ -31,13 +39,13 @@ public class TankManager : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             // Add multiplayer method for server to handle movement
-            rb.AddForce(tankBody.transform.up * (baseMoveMultiplyer + upgradeMoveMultiplyer));
+            rb.AddForce(tankBody.transform.up * (baseMoveMultiplier + upgradeMoveMultiplier));
         }
 
         if (Input.GetKey(KeyCode.S))
         {
             // Add multiplayer method for server to handle movement
-            rb.AddForce(-tankBody.transform.up * (baseMoveMultiplyer + upgradeMoveMultiplyer));
+            rb.AddForce(-tankBody.transform.up * (baseMoveMultiplier + upgradeMoveMultiplier));
         }
 
         if (Input.GetKey(KeyCode.A))
@@ -53,12 +61,38 @@ public class TankManager : MonoBehaviour
         }
     }
 
-    void UpdateTurretPosition()
+    void UpdateTurret()
     {
+        // Add multiplayer method to handle turret rotation (due to shooting bullets)
         Vector3 mouse = Input.mousePosition;
         mouse = Camera.main.ScreenToWorldPoint(mouse);
         Vector2 direction = new Vector2(mouse.x - transform.position.x, mouse.y - transform.position.y);
 
         tankTurret.transform.up = direction;
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (playerRounds.Count < 4)
+            {
+                ShootTurret(direction);
+            }
+        }
+    }
+
+    void ShootTurret(Vector2 direction)
+    {
+        GameObject newRound = Instantiate(round, tankTurret.transform.Find("Barrel").position, Quaternion.identity);
+        newRound.GetComponent<RoundManager>().velocity = baseRoundVelocity + upgradeRoundVelocity;
+        newRound.GetComponent<RoundManager>().direction = Mathf.Rad2Deg * Mathf.Atan2(direction.y, direction.x) - 90f;
+        playerRounds.Add(newRound);
+        
+        StartCoroutine(DelayedDestroyRound(newRound));
+    }
+
+    IEnumerator DelayedDestroyRound(GameObject newRound)
+    {
+        yield return new WaitForSeconds(baseRoundDuration + upgradeRoundDuration);
+        playerRounds.Remove(newRound);
+        Destroy(newRound);
     }
 }

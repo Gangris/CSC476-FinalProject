@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\BodyManager.cs" />
+    <Compile Include="Assets\Scripts\RoundManager.cs" />
     <Compile Include="Assets\Scripts\TankManager.cs" />
     <Compile Include="Assets\Scripts\TurretManager.cs" />
     <Reference Include="UnityEditor.StandardEvents">
