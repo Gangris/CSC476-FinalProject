@@ -6,6 +6,7 @@ public class RoundManager : MonoBehaviour
 {
     public float velocity = 0.0f;
     public float direction;
+    public GameObject owner;
 
 	// Use this for initialization
 	void Start () {
@@ -17,4 +18,12 @@ public class RoundManager : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, direction);
 		transform.Translate(Vector3.up * Time.deltaTime * velocity);
 	}
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.GetInstanceID() != owner.GetInstanceID())
+        {
+            Destroy(gameObject);
+        }
+    }
 }

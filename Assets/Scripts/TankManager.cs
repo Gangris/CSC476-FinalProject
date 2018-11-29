@@ -29,10 +29,17 @@ public class TankManager : MonoBehaviour
 	    tankTurret = tttrans.gameObject;
 	}
 	
-	void Update () {
+	void Update ()
+	{
+	    CenterCamera();
 	    MovementInput();
 	    UpdateTurret();
 	}
+
+    void CenterCamera()
+    {
+        Camera.main.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, -10);
+    }
 
     void MovementInput()
     {
@@ -84,6 +91,7 @@ public class TankManager : MonoBehaviour
         GameObject newRound = Instantiate(round, tankTurret.transform.Find("Barrel").position, Quaternion.identity);
         newRound.GetComponent<RoundManager>().velocity = baseRoundVelocity + upgradeRoundVelocity;
         newRound.GetComponent<RoundManager>().direction = Mathf.Rad2Deg * Mathf.Atan2(direction.y, direction.x) - 90f;
+        newRound.GetComponent<RoundManager>().owner = gameObject;
         playerRounds.Add(newRound);
         
         StartCoroutine(DelayedDestroyRound(newRound));
