@@ -6,6 +6,7 @@ public class RoundManager : PewPewTankObject
 {
     public float velocity = 0.0f;
     public float direction;
+    public int damage = 0;
     public GameObject owner;
 
 	// Use this for initialization
@@ -32,7 +33,15 @@ public class RoundManager : PewPewTankObject
         {
             if (t.team != this.team)
             {
-                Destroy(this);
+                Destroy(this.gameObject);
+                
+                // Test to see if it's a destructable object or not
+                DestructablePewPewTankObject dt = col.GetComponent<DestructablePewPewTankObject>();
+                if (dt != null)
+                {
+                    Debug.Log("Destructable Object Found");
+                    dt.TakeDamage(damage);
+                }
             }
         }
     }

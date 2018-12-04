@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TankManager : PewPewTankObject
+public class TankManager : DestructablePewPewTankObject
 {
     public GameObject round;
 
@@ -17,6 +17,10 @@ public class TankManager : PewPewTankObject
     public float upgradeRoundVelocity = 0;
     public float baseRoundDuration = 1;
     public float upgradeRoundDuration = 0;
+    public int baseHealth = 1000;
+    public int upgradeHealth = 0;
+    public int baseDamage = 50;
+    public int upgradeDamage = 0;
 
 	void Start ()
 	{
@@ -27,6 +31,11 @@ public class TankManager : PewPewTankObject
 
 	    Transform tttrans = gameObject.transform.Find("Turret");
 	    tankTurret = tttrans.gameObject;
+
+	    this.health = baseHealth;
+	    this.maxHealth = baseHealth;
+
+        Bootstrap();
 	}
 	
 	void Update ()
@@ -93,6 +102,7 @@ public class TankManager : PewPewTankObject
         newRound.GetComponent<RoundManager>().direction = Mathf.Rad2Deg * Mathf.Atan2(direction.y, direction.x) - 90f;
         newRound.GetComponent<RoundManager>().owner = gameObject;
         newRound.GetComponent<RoundManager>().team = team;
+        newRound.GetComponent<RoundManager>().damage = baseDamage + upgradeDamage;
         playerRounds.Add(newRound);
         
         StartCoroutine(DelayedDestroyRound(newRound));
