@@ -12308,6 +12308,10 @@ MonoBehaviour:
   health: 100
   maxHealth: 100
   healthBar: {fileID: 0}
+  round: {fileID: 1930067908736834, guid: b4ad62038e4772a46982b432cd0bd1cf, type: 2}
+  turret: {fileID: 430621213}
+  teamName: 
+  turretDamage: 100
 --- !u!54 &430621215
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12330,7 +12334,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 430621213}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.49, y: -2.47, z: -0.5}
+  m_LocalPosition: {x: -0.49, y: -2.47, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1505109422}
@@ -12348,7 +12352,7 @@ GameObject:
   - component: {fileID: 433414785}
   m_Layer: 0
   m_Name: Team2Creeps
-  m_TagString: Untagged
+  m_TagString: team2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12376,7 +12380,7 @@ GameObject:
   - component: {fileID: 434049895}
   m_Layer: 0
   m_Name: Team1Creeps
-  m_TagString: Untagged
+  m_TagString: team1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18983,6 +18987,10 @@ MonoBehaviour:
   health: 100
   maxHealth: 100
   healthBar: {fileID: 0}
+  round: {fileID: 1930067908736834, guid: b4ad62038e4772a46982b432cd0bd1cf, type: 2}
+  turret: {fileID: 1171206278}
+  teamName: 
+  turretDamage: 100
 --- !u!54 &1171206280
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -19005,7 +19013,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1171206278}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.49, y: 15.5, z: -0.5}
+  m_LocalPosition: {x: 13.49, y: 15.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 182010030}
@@ -19223,7 +19231,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1234703765}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.5, y: 1.53, z: -0.5}
+  m_LocalPosition: {x: -4.5, y: 1.53, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1798541889}
@@ -19246,6 +19254,10 @@ MonoBehaviour:
   health: 100
   maxHealth: 100
   healthBar: {fileID: 0}
+  round: {fileID: 1930067908736834, guid: b4ad62038e4772a46982b432cd0bd1cf, type: 2}
+  turret: {fileID: 1234703765}
+  teamName: 
+  turretDamage: 100
 --- !u!54 &1234703768
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -21014,6 +21026,10 @@ MonoBehaviour:
   health: 100
   maxHealth: 100
   healthBar: {fileID: 0}
+  round: {fileID: 1930067908736834, guid: b4ad62038e4772a46982b432cd0bd1cf, type: 2}
+  turret: {fileID: 1440975288}
+  teamName: 
+  turretDamage: 100
 --- !u!54 &1440975290
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -21036,7 +21052,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1440975288}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.47, y: 0.52, z: -0.5}
+  m_LocalPosition: {x: -1.47, y: 0.52, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 471775802}
@@ -25886,7 +25902,7 @@ Prefab:
     - target: {fileID: 114353168128029280, guid: e621c2aeb0b0b1543829d60fe6076f37,
         type: 2}
       propertyPath: team
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 136630867281816330, guid: e621c2aeb0b0b1543829d60fe6076f37,
         type: 2}
@@ -25913,6 +25929,10 @@ Prefab:
       propertyPath: damage
       value: 
       objectReference: {fileID: 1972830659}
+    - target: {fileID: 1898986288188812, guid: e621c2aeb0b0b1543829d60fe6076f37, type: 2}
+      propertyPath: m_TagString
+      value: team1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114301377054756064, guid: e621c2aeb0b0b1543829d60fe6076f37, type: 2}
     - {fileID: 114958873411347072, guid: e621c2aeb0b0b1543829d60fe6076f37, type: 2}
@@ -26455,6 +26475,10 @@ MonoBehaviour:
   health: 100
   maxHealth: 100
   healthBar: {fileID: 0}
+  round: {fileID: 1930067908736834, guid: b4ad62038e4772a46982b432cd0bd1cf, type: 2}
+  turret: {fileID: 1941028660}
+  teamName: 
+  turretDamage: 100
 --- !u!54 &1941028662
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -26477,7 +26501,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1941028660}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.51, y: 14.5, z: -0.5}
+  m_LocalPosition: {x: 16.51, y: 14.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1272137223}
@@ -26820,6 +26844,10 @@ MonoBehaviour:
   health: 100
   maxHealth: 100
   healthBar: {fileID: 0}
+  round: {fileID: 1930067908736834, guid: b4ad62038e4772a46982b432cd0bd1cf, type: 2}
+  turret: {fileID: 1961826013}
+  teamName: 
+  turretDamage: 100
 --- !u!54 &1961826015
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -26842,7 +26870,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1961826013}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.5, y: 18.54, z: -0.5}
+  m_LocalPosition: {x: 12.5, y: 18.54, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 626887985}
