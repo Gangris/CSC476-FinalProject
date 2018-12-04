@@ -41,7 +41,7 @@ public class TankManager : DestructablePewPewTankObject
 	    this.maxHealth = baseHealth;
 
         hp.text = baseHealth + " HP";
-        movespeed.text = baseMoveMultiplier + " MS";
+        movespeed.text = baseMoveMultiplier + upgradeMoveMultiplier + " MS";
         damage.text = baseDamage + " DMG";
 
         Bootstrap();
@@ -52,7 +52,11 @@ public class TankManager : DestructablePewPewTankObject
 	    CenterCamera();
 	    MovementInput();
 	    UpdateTurret();
-	}
+
+        hp.text = this.health + " HP";
+        movespeed.text = (baseMoveMultiplier + upgradeMoveMultiplier)+ " MS";
+        damage.text = (baseDamage + upgradeDamage) + " DMG";
+    }
 
     void CenterCamera()
     {

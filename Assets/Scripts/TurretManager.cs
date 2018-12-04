@@ -8,7 +8,7 @@ public class TurretManager : DestructablePewPewTankObject
     public GameObject round;
     public GameObject turret;
 
-    public string teamName;
+    public string enemyTeam;
     public int turretDamage = 100;
 
     float timer = 0;
@@ -20,21 +20,21 @@ public class TurretManager : DestructablePewPewTankObject
         this.maxHealth = 1000;
         this.health = 1000;
         if (this.team == Team.team1)
-            teamName = "team1";
+            enemyTeam = "team2";
         else
-            teamName = "team2";
+            enemyTeam = "team1";
     }
 
     private void Update()
     {
-            enemies = GameObject.FindGameObjectsWithTag(teamName);
+            enemies = GameObject.FindGameObjectsWithTag(enemyTeam);
         foreach (GameObject target in enemies)
         {
             float distance = Vector3.Distance(target.transform.position, transform.position);
             Vector2 targetPos = new Vector2(target.transform.position.x - transform.position.x, target.transform.position.y - transform.position.y);
 
             timer += Time.deltaTime;
-            if (distance < 2 && timer > waitingTime)
+            if (distance <=2 && timer > waitingTime)
             {
                 ShootTurret(targetPos);
                 timer = 0;

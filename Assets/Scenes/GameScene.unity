@@ -12288,7 +12288,7 @@ GameObject:
   - component: {fileID: 430621214}
   m_Layer: 0
   m_Name: Team1TurretBot
-  m_TagString: Untagged
+  m_TagString: team1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12310,7 +12310,7 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   round: {fileID: 1930067908736834, guid: b4ad62038e4772a46982b432cd0bd1cf, type: 2}
   turret: {fileID: 430621213}
-  teamName: 
+  enemyTeam: 
   turretDamage: 100
 --- !u!54 &430621215
 Rigidbody:
@@ -18615,6 +18615,15 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 1995325466720774, guid: 51abc947fe7dd384f93209f5679beb02, type: 2}
+      propertyPath: m_TagString
+      value: team2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114675730187132684, guid: 51abc947fe7dd384f93209f5679beb02,
+        type: 2}
+      propertyPath: canMove
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51abc947fe7dd384f93209f5679beb02, type: 2}
   m_IsPrefabAsset: 0
@@ -19051,7 +19060,7 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   round: {fileID: 1930067908736834, guid: b4ad62038e4772a46982b432cd0bd1cf, type: 2}
   turret: {fileID: 1171206278}
-  teamName: 
+  enemyTeam: 
   turretDamage: 100
 --- !u!54 &1171206280
 Rigidbody:
@@ -19281,7 +19290,7 @@ GameObject:
   - component: {fileID: 1234703767}
   m_Layer: 0
   m_Name: Team1TurretTop
-  m_TagString: Untagged
+  m_TagString: team1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19318,7 +19327,7 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   round: {fileID: 1930067908736834, guid: b4ad62038e4772a46982b432cd0bd1cf, type: 2}
   turret: {fileID: 1234703765}
-  teamName: 
+  enemyTeam: 
   turretDamage: 100
 --- !u!54 &1234703768
 Rigidbody:
@@ -21068,7 +21077,7 @@ GameObject:
   - component: {fileID: 1440975289}
   m_Layer: 0
   m_Name: Team1TurretMid
-  m_TagString: Untagged
+  m_TagString: team1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21090,7 +21099,7 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   round: {fileID: 1930067908736834, guid: b4ad62038e4772a46982b432cd0bd1cf, type: 2}
   turret: {fileID: 1440975288}
-  teamName: 
+  enemyTeam: 
   turretDamage: 100
 --- !u!54 &1440975290
 Rigidbody:
@@ -25964,7 +25973,7 @@ Prefab:
     - target: {fileID: 114353168128029280, guid: e621c2aeb0b0b1543829d60fe6076f37,
         type: 2}
       propertyPath: team
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 136630867281816330, guid: e621c2aeb0b0b1543829d60fe6076f37,
         type: 2}
@@ -25994,6 +26003,11 @@ Prefab:
     - target: {fileID: 1898986288188812, guid: e621c2aeb0b0b1543829d60fe6076f37, type: 2}
       propertyPath: m_TagString
       value: team1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114353168128029280, guid: e621c2aeb0b0b1543829d60fe6076f37,
+        type: 2}
+      propertyPath: baseMoveMultiplier
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114301377054756064, guid: e621c2aeb0b0b1543829d60fe6076f37, type: 2}
@@ -26539,7 +26553,7 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   round: {fileID: 1930067908736834, guid: b4ad62038e4772a46982b432cd0bd1cf, type: 2}
   turret: {fileID: 1941028660}
-  teamName: 
+  enemyTeam: 
   turretDamage: 100
 --- !u!54 &1941028662
 Rigidbody:
@@ -26908,7 +26922,7 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   round: {fileID: 1930067908736834, guid: b4ad62038e4772a46982b432cd0bd1cf, type: 2}
   turret: {fileID: 1961826013}
-  teamName: 
+  enemyTeam: 
   turretDamage: 100
 --- !u!54 &1961826015
 Rigidbody:
