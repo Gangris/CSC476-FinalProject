@@ -14,6 +14,7 @@ public class CreepManager : DestructablePewPewTankObject
         InvokeRepeating("Spawn", spawnTime, spawnTime);
     }
 
+
     public GameObject Team1Creep;
     public GameObject Team2Creep;
     public GameObject T1midSpawn;
@@ -22,7 +23,8 @@ public class CreepManager : DestructablePewPewTankObject
     public GameObject T2midSpawn;
     public GameObject T2botSpawn;
     public GameObject T2topSpawn;
-    public float spawnTime = 45f;
+
+    public float spawnTime = 1f;
 
     void Spawn()
     {

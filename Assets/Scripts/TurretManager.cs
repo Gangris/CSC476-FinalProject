@@ -34,7 +34,7 @@ public class TurretManager : DestructablePewPewTankObject
             Vector2 targetPos = new Vector2(target.transform.position.x - transform.position.x, target.transform.position.y - transform.position.y);
 
             timer += Time.deltaTime;
-            if (distance <=2 && timer > waitingTime)
+            if (distance <= 5 && timer > waitingTime)
             {
                 ShootTurret(targetPos);
                 timer = 0;
