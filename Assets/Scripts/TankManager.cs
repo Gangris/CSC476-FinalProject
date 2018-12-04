@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TankManager : DestructablePewPewTankObject
 {
@@ -22,7 +23,11 @@ public class TankManager : DestructablePewPewTankObject
     public int baseDamage = 50;
     public int upgradeDamage = 0;
 
-	void Start ()
+    public Text hp;
+    public Text movespeed;
+    public Text damage;
+
+    void Start ()
 	{
 	    rb = GetComponent<Rigidbody>();
 
@@ -34,6 +39,10 @@ public class TankManager : DestructablePewPewTankObject
 
 	    this.health = baseHealth;
 	    this.maxHealth = baseHealth;
+
+        hp.text = baseHealth + " HP";
+        movespeed.text = baseMoveMultiplier + " MS";
+        damage.text = baseDamage + " DMG";
 
         Bootstrap();
 	}
