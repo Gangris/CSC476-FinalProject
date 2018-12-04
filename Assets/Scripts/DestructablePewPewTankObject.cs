@@ -16,7 +16,6 @@ public class DestructablePewPewTankObject : PewPewTankObject
 
     public void TakeDamage(int amount)
     {
-        Debug.Log("Taking " + amount + " Damage");
         health -= amount;
         healthBar.fillAmount = (float)health / (float)maxHealth;
 

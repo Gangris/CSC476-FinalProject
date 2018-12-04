@@ -39,7 +39,6 @@ public class RoundManager : PewPewTankObject
                 DestructablePewPewTankObject dt = col.GetComponent<DestructablePewPewTankObject>();
                 if (dt != null)
                 {
-                    Debug.Log("Destructable Object Found");
                     dt.TakeDamage(damage);
                 }
             }

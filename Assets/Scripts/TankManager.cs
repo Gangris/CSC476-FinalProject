@@ -98,11 +98,12 @@ public class TankManager : DestructablePewPewTankObject
     void ShootTurret(Vector2 direction)
     {
         GameObject newRound = Instantiate(round, tankTurret.transform.Find("Barrel").position, Quaternion.identity);
-        newRound.GetComponent<RoundManager>().velocity = baseRoundVelocity + upgradeRoundVelocity;
-        newRound.GetComponent<RoundManager>().direction = Mathf.Rad2Deg * Mathf.Atan2(direction.y, direction.x) - 90f;
-        newRound.GetComponent<RoundManager>().owner = gameObject;
-        newRound.GetComponent<RoundManager>().team = team;
-        newRound.GetComponent<RoundManager>().damage = baseDamage + upgradeDamage;
+        RoundManager nrManager = newRound.GetComponent<RoundManager>();
+        nrManager.velocity = baseRoundVelocity + upgradeRoundVelocity;
+        nrManager.direction = Mathf.Rad2Deg * Mathf.Atan2(direction.y, direction.x) - 90f;
+        nrManager.owner = gameObject;
+        nrManager.team = team;
+        nrManager.damage = baseDamage + upgradeDamage;
         playerRounds.Add(newRound);
         
         StartCoroutine(DelayedDestroyRound(newRound));
