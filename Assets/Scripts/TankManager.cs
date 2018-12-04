@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TankManager : MonoBehaviour
+public class TankManager : PewPewTankObject
 {
     public GameObject round;
 
@@ -92,6 +92,7 @@ public class TankManager : MonoBehaviour
         newRound.GetComponent<RoundManager>().velocity = baseRoundVelocity + upgradeRoundVelocity;
         newRound.GetComponent<RoundManager>().direction = Mathf.Rad2Deg * Mathf.Atan2(direction.y, direction.x) - 90f;
         newRound.GetComponent<RoundManager>().owner = gameObject;
+        newRound.GetComponent<RoundManager>().team = team;
         playerRounds.Add(newRound);
         
         StartCoroutine(DelayedDestroyRound(newRound));

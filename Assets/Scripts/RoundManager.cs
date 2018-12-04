@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RoundManager : MonoBehaviour
+public class RoundManager : PewPewTankObject
 {
     public float velocity = 0.0f;
     public float direction;
@@ -19,11 +19,21 @@ public class RoundManager : MonoBehaviour
 		transform.Translate(Vector3.up * Time.deltaTime * velocity);
 	}
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.GetInstanceID() != owner.GetInstanceID())
+        var col = collision.gameObject;
+        while (col.GetComponent<PewPewTankObject>() == null && collision.gameObject.transform.parent != null)
         {
-            Destroy(gameObject);
+            col = col.transform.parent.gameObject;
+        }
+
+        PewPewTankObject t = col.GetComponent<PewPewTankObject>();
+        if (t != null)
+        {
+            if (t.team != this.team)
+            {
+                Destroy(this);
+            }
         }
     }
 }
