@@ -12682,7 +12682,7 @@ GameObject:
   - component: {fileID: 471775803}
   m_Layer: 0
   m_Name: TurretBase
-  m_TagString: Untagged
+  m_TagString: team1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18204,8 +18204,8 @@ MonoBehaviour:
   health: 100
   maxHealth: 100
   healthBar: {fileID: 0}
-  Team1Creep: {fileID: 1237905985066550, guid: cb39d15f860cc074992d40ecb0daf925, type: 2}
-  Team2Creep: {fileID: 1237905985066550, guid: cb39d15f860cc074992d40ecb0daf925, type: 2}
+  Team1Creep: {fileID: 1984614131151938, guid: 72d6542bd2096f440a3314b48dd9034e, type: 2}
+  Team2Creep: {fileID: 1980960970264294, guid: 17c368c682c21d24cb5dc737c977db0b, type: 2}
   T1midSpawn: {fileID: 2079981751}
   T1botSpawn: {fileID: 24073137}
   T1topSpawn: {fileID: 76088171}
