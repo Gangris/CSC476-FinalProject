@@ -22,10 +22,12 @@ public class TankManager : DestructablePewPewTankObject
     public int upgradeHealth = 0;
     public int baseDamage = 50;
     public int upgradeDamage = 0;
+    public int money;
 
     public Text hp;
     public Text movespeed;
     public Text damage;
+    public Text Money;
 
     void Start ()
 	{
@@ -43,7 +45,9 @@ public class TankManager : DestructablePewPewTankObject
         hp.text = baseHealth + " HP";
         movespeed.text = baseMoveMultiplier + upgradeMoveMultiplier + " MS";
         damage.text = baseDamage + " DMG";
-
+        
+        money = gameMoney;
+        Money.text = "$" + money;
         Bootstrap();
 	}
 	
@@ -56,6 +60,7 @@ public class TankManager : DestructablePewPewTankObject
         hp.text = this.health + " HP";
         movespeed.text = (baseMoveMultiplier + upgradeMoveMultiplier)+ " MS";
         damage.text = (baseDamage + upgradeDamage) + " DMG";
+        Money.text = "$" + money;
     }
 
     void CenterCamera()
@@ -127,5 +132,11 @@ public class TankManager : DestructablePewPewTankObject
         yield return new WaitForSeconds(baseRoundDuration + upgradeRoundDuration);
         playerRounds.Remove(newRound);
         Destroy(newRound);
+    }
+
+    public void addCreepMoney()
+    {
+        money = money + 50;
+        
     }
 }
