@@ -12,7 +12,7 @@ public class TurretManager : DestructablePewPewTankObject
     public int turretDamage = 100;
 
     float timer = 0;
-    int waitingTime = 1;
+    int waitingTime = 2;
 
     void Start()
     {
