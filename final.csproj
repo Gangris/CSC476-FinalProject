@@ -327,6 +327,8 @@
     <Compile Include="Assets\Scripts\PewPewTankObject.cs" />
     <Compile Include="Assets\Scripts\RoundManager.cs" />
     <Compile Include="Assets\Scripts\TankManager.cs" />
+    <Compile Include="Assets\Scripts\Test.cs" />
+    <Compile Include="Assets\Scripts\Triggers.cs" />
     <Compile Include="Assets\Scripts\TurretManager.cs" />
   </ItemGroup>
   <ItemGroup>
