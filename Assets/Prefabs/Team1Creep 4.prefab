@@ -578,11 +578,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45b74a72383e94c47b9cbf11f98b0112, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  team: 0
+  team: 1
   health: 100
   maxHealth: 100
   gameMoney: 50
   healthBar: {fileID: 0}
+  round: {fileID: 1930067908736834, guid: b4ad62038e4772a46982b432cd0bd1cf, type: 2}
+  creep: {fileID: 1075059600371626}
+  enemyTeam: team2
+  creepDamage: 25
 --- !u!136 &136306065379147600
 CapsuleCollider:
   m_ObjectHideFlags: 1
