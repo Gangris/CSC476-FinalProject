@@ -20,6 +20,8 @@ public class TankManager : DestructablePewPewTankObject
     public float upgradeRoundDuration = 0;
     public int baseHealth = 1000;
     public int upgradeHealth = 0;
+    public int hpRegen = 1;
+    public int hpRegenUpgrade = 0;
     public int baseDamage = 50;
     public int upgradeDamage = 0;
     public int money;
@@ -75,12 +77,7 @@ public class TankManager : DestructablePewPewTankObject
         damage.text = (baseDamage + upgradeDamage) + " DMG";
         Money.text = "$" + gameMoney;
 
-        moneyTimer += Time.deltaTime;
-        if (moneyTimer > moneyWait)
-        {
-            gameMoney += upgradeGPM;
-            moneyTimer = 0;
-        }
+        
 
         if (this.health <= 0)
         {
@@ -111,6 +108,20 @@ public class TankManager : DestructablePewPewTankObject
         else if (isDead == false)
         {
             panel.gameObject.SetActive(false);
+
+            moneyTimer += Time.deltaTime;
+            if (moneyTimer > moneyWait)
+            {
+                if (this.health < (baseHealth + upgradeHealth))
+                {
+                    this.health += (hpRegen + hpRegenUpgrade);
+                }
+                else if (this.health >= (baseHealth + upgradeHealth))
+                    this.health = (baseHealth + upgradeHealth);
+
+                gameMoney += upgradeGPM;
+                moneyTimer = 0;
+            }
         }
 
     }
