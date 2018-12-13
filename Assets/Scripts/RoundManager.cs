@@ -23,11 +23,17 @@ public class RoundManager : PewPewTankObject
     void OnTriggerEnter(Collider collision)
     {
         var col = collision.gameObject;
-        while (col.GetComponent<PewPewTankObject>() == null && collision.gameObject.transform.parent != null)
+        if (col.transform.parent != null)
         {
             col = col.transform.parent.gameObject;
         }
 
+        //original code, breaks.
+        /*while (col.GetComponent<PewPewTankObject>() == null && collision.gameObject.transform.parent != null)
+        {
+            col = col.transform.parent.gameObject;
+        }*/
+        
         PewPewTankObject t = col.GetComponent<PewPewTankObject>();
         if (t != null)
         {

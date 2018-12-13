@@ -8,6 +8,8 @@ TagManager:
   - Healthbar
   - team1
   - team2
+  - Team1Creep
+  - Team2Creep
   layers:
   - Default
   - TransparentFX

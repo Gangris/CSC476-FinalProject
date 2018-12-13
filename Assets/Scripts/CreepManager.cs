@@ -41,7 +41,7 @@ namespace Pathfinding
             GameObject T1topS = Instantiate(Team1Creep, T1topSpawn.transform.position, Quaternion.identity);
             AIDestinationSetter t1ts = T1topS.GetComponent<AIDestinationSetter>();
             t1ts.target = TopTrigger.transform;
-
+            
             GameObject T1midS = Instantiate(Team1Creep, T1midSpawn.transform.position, Quaternion.identity);
             AIDestinationSetter t1ms = T1midS.GetComponent<AIDestinationSetter>();
             t1ms.target = T1MidTarget.transform;
