@@ -7,6 +7,7 @@ public class DestructablePewPewTankObject : PewPewTankObject
 {
     public int health = 100; // Default
     public int maxHealth = 100; // Default
+    public int gameMoney = 50;
     public Image healthBar;
 
     void Start()
@@ -21,6 +22,7 @@ public class DestructablePewPewTankObject : PewPewTankObject
 
         if (health <= 0)
         {
+            gameMoney = gameMoney + 50;
             Die();
         }
     }

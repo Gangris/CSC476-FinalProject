@@ -12477,6 +12477,7 @@ MonoBehaviour:
   team: 1
   health: 100
   maxHealth: 100
+  gameMoney: 50
   healthBar: {fileID: 0}
   round: {fileID: 1930067908736834, guid: b4ad62038e4772a46982b432cd0bd1cf, type: 2}
   turret: {fileID: 430621213}
@@ -15185,7 +15186,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 178.6, y: 28}
+  m_AnchoredPosition: {x: 283, y: 28}
   m_SizeDelta: {x: 160, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &705933261
@@ -16775,6 +16776,81 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &909181541
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 909181544}
+  - component: {fileID: 909181543}
+  - component: {fileID: 909181542}
+  m_Layer: 0
+  m_Name: Money
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &909181542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 909181541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 30
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 3
+    m_MaxSize: 40
+    m_Alignment: 2
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: $0
+--- !u!222 &909181543
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 909181541}
+  m_CullTransparentMesh: 0
+--- !u!224 &909181544
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 909181541}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1023752389}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -755.3, y: 28}
+  m_SizeDelta: {x: 160, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &924358272
 GameObject:
   m_ObjectHideFlags: 0
@@ -18203,6 +18279,7 @@ MonoBehaviour:
   team: 1
   health: 100
   maxHealth: 100
+  gameMoney: 50
   healthBar: {fileID: 0}
   Team1Creep: {fileID: 1984614131151938, guid: 72d6542bd2096f440a3314b48dd9034e, type: 2}
   Team2Creep: {fileID: 1980960970264294, guid: 17c368c682c21d24cb5dc737c977db0b, type: 2}
@@ -18224,7 +18301,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1009745413}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.2493675, y: 5.817589, z: 5.674624}
+  m_LocalPosition: {x: -3.2493675, y: 5.817589, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 434049895}
@@ -18267,13 +18344,14 @@ RectTransform:
   - {fileID: 1884401182}
   - {fileID: 705933260}
   - {fileID: 1972830661}
+  - {fileID: 909181544}
   m_Father: {fileID: 1789211283}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: -89.5, y: 2}
-  m_SizeDelta: {x: 1000, y: 50}
+  m_SizeDelta: {x: 1500, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1023752390
 MonoBehaviour:
@@ -19033,7 +19111,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4629323307489916, guid: cb39d15f860cc074992d40ecb0daf925, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -5.9406238
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 4629323307489916, guid: cb39d15f860cc074992d40ecb0daf925, type: 2}
       propertyPath: m_LocalRotation.x
@@ -19063,6 +19141,10 @@ Prefab:
     - target: {fileID: 1237905985066550, guid: cb39d15f860cc074992d40ecb0daf925, type: 2}
       propertyPath: m_Name
       value: Team1Creep
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237905985066550, guid: cb39d15f860cc074992d40ecb0daf925, type: 2}
+      propertyPath: m_TagString
+      value: team1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb39d15f860cc074992d40ecb0daf925, type: 2}
@@ -19468,6 +19550,7 @@ MonoBehaviour:
   team: 2
   health: 100
   maxHealth: 100
+  gameMoney: 50
   healthBar: {fileID: 0}
   round: {fileID: 1930067908736834, guid: b4ad62038e4772a46982b432cd0bd1cf, type: 2}
   turret: {fileID: 1171206278}
@@ -19735,6 +19818,7 @@ MonoBehaviour:
   team: 1
   health: 100
   maxHealth: 100
+  gameMoney: 50
   healthBar: {fileID: 0}
   round: {fileID: 1930067908736834, guid: b4ad62038e4772a46982b432cd0bd1cf, type: 2}
   turret: {fileID: 1234703765}
@@ -21507,6 +21591,7 @@ MonoBehaviour:
   team: 1
   health: 100
   maxHealth: 100
+  gameMoney: 50
   healthBar: {fileID: 0}
   round: {fileID: 1930067908736834, guid: b4ad62038e4772a46982b432cd0bd1cf, type: 2}
   turret: {fileID: 1440975288}
@@ -26360,7 +26445,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 344, y: 28}
+  m_AnchoredPosition: {x: 397, y: 28}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1884401183
@@ -26698,6 +26783,11 @@ Prefab:
       propertyPath: baseMoveMultiplier
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 114353168128029280, guid: e621c2aeb0b0b1543829d60fe6076f37,
+        type: 2}
+      propertyPath: Money
+      value: 
+      objectReference: {fileID: 909181542}
     m_RemovedComponents:
     - {fileID: 114301377054756064, guid: e621c2aeb0b0b1543829d60fe6076f37, type: 2}
     - {fileID: 114958873411347072, guid: e621c2aeb0b0b1543829d60fe6076f37, type: 2}
@@ -27239,6 +27329,7 @@ MonoBehaviour:
   team: 2
   health: 100
   maxHealth: 100
+  gameMoney: 50
   healthBar: {fileID: 0}
   round: {fileID: 1930067908736834, guid: b4ad62038e4772a46982b432cd0bd1cf, type: 2}
   turret: {fileID: 1941028660}
@@ -27608,6 +27699,7 @@ MonoBehaviour:
   team: 2
   health: 100
   maxHealth: 100
+  gameMoney: 50
   healthBar: {fileID: 0}
   round: {fileID: 1930067908736834, guid: b4ad62038e4772a46982b432cd0bd1cf, type: 2}
   turret: {fileID: 1961826013}
@@ -27715,7 +27807,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -491, y: 27.999994}
+  m_AnchoredPosition: {x: -989, y: 28}
   m_SizeDelta: {x: 160, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1978632342

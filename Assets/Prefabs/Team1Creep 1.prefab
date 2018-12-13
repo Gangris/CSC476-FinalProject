@@ -80,7 +80,7 @@ GameObject:
   - component: {fileID: 114933494621502060}
   m_Layer: 0
   m_Name: Team1Creep 1
-  m_TagString: team2
+  m_TagString: team1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -286,6 +286,7 @@ MonoBehaviour:
   team: 2
   health: 100
   maxHealth: 100
+  gameMoney: 50
   healthBar: {fileID: 0}
   Team1Creep: {fileID: 0}
   Team2Creep: {fileID: 0}
@@ -295,6 +296,10 @@ MonoBehaviour:
   T2midSpawn: {fileID: 0}
   T2botSpawn: {fileID: 0}
   T2topSpawn: {fileID: 0}
+  T1MidTarget: {fileID: 0}
+  T2MidTarget: {fileID: 0}
+  TopTrigger: {fileID: 0}
+  BottomTrigger: {fileID: 0}
   spawnTime: 45
 --- !u!114 &114998221987946032
 MonoBehaviour:
