@@ -7,7 +7,6 @@ public class DestructablePewPewTankObject : PewPewTankObject
 {
     public int health = 100; // Default
     public int maxHealth = 100; // Default
-    public int gameMoney = 50;
     public Image healthBar;
 
     void Start()
@@ -15,20 +14,19 @@ public class DestructablePewPewTankObject : PewPewTankObject
         Bootstrap();
     }
 
-    public void TakeDamage(int amount)
+    public virtual void TakeDamage(int amount, GameObject owner)
     {
         health -= amount;
         healthBar.fillAmount = (float)health / (float)maxHealth;
 
         if (health <= 0)
         {
-            gameMoney = gameMoney + 50;
-            Die();
+            Die(owner);
         }
     }
 
     // Default behavior is to just... disappear. This should be overwritten by every class.
-    public virtual void Die()
+    public virtual void Die(GameObject killer)
     {
         Destroy(this.gameObject);
     }

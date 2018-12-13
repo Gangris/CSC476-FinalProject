@@ -29,6 +29,21 @@ public class Creep : DestructablePewPewTankObject {
 	    }
 	}
 
+    public override void Die(GameObject killer)
+    {
+        if (killer.name == "PlayerTank" && this.team == Team.team2)
+        {
+            killer.GetComponent<TankManager>().money += 50;
+        }
+
+        base.Die(killer);
+    }
+
+    public override void TakeDamage(int amount, GameObject owner)
+    {
+        base.TakeDamage(amount, owner);
+    }
+
     private void Update()
     {
         enemies = GameObject.FindGameObjectsWithTag(enemyTeam);

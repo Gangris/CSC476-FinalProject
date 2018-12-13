@@ -40,7 +40,7 @@ public class RoundManager : PewPewTankObject
                 DestructablePewPewTankObject dt = col.GetComponent<DestructablePewPewTankObject>();
                 if (dt != null)
                 {
-                    dt.TakeDamage(damage);
+                    dt.TakeDamage(damage, owner);
                 }
             }
         }

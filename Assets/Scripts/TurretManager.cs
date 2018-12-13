@@ -26,7 +26,8 @@ public class TurretManager : DestructablePewPewTankObject
 
     private void Update()
     {
-            enemies = GameObject.FindGameObjectsWithTag(enemyTeam);
+        enemies = GameObject.FindGameObjectsWithTag(enemyTeam);
+
         foreach (GameObject target in enemies)
         {
             float distance = Vector3.Distance(target.transform.position, transform.position);
@@ -39,7 +40,6 @@ public class TurretManager : DestructablePewPewTankObject
                 timer = 0;
             }
         }
-
     }
 
     void ShootTurret(Vector2 direction)

@@ -60,7 +60,7 @@ public class TankManager : DestructablePewPewTankObject
         movespeed.text = baseMoveMultiplier + upgradeMoveMultiplier + " MS";
         damage.text = baseDamage + " DMG";
         
-        money = gameMoney;
+        money = 0;
         Money.text = "$" + money;
         Bootstrap();
         //panel.gameObject.SetActive(false);
@@ -75,7 +75,7 @@ public class TankManager : DestructablePewPewTankObject
         hp.text = this.health + " HP";
         movespeed.text = (baseMoveMultiplier + upgradeMoveMultiplier)+ " MS";
         damage.text = (baseDamage + upgradeDamage) + " DMG";
-        Money.text = "$" + gameMoney;
+        Money.text = "$" + money;
 
         
 
@@ -119,7 +119,7 @@ public class TankManager : DestructablePewPewTankObject
                 else if (this.health >= (baseHealth + upgradeHealth))
                     this.health = (baseHealth + upgradeHealth);
 
-                gameMoney += upgradeGPM;
+                money += upgradeGPM;
                 moneyTimer = 0;
             }
         }
