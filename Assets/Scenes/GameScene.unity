@@ -27008,6 +27008,11 @@ Prefab:
       propertyPath: DeathTime
       value: 
       objectReference: {fileID: 878079166}
+    - target: {fileID: 114353168128029280, guid: e621c2aeb0b0b1543829d60fe6076f37,
+        type: 2}
+      propertyPath: upgradeGPM
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114301377054756064, guid: e621c2aeb0b0b1543829d60fe6076f37, type: 2}
     - {fileID: 114958873411347072, guid: e621c2aeb0b0b1543829d60fe6076f37, type: 2}

@@ -23,6 +23,7 @@ public class TankManager : DestructablePewPewTankObject
     public int baseDamage = 50;
     public int upgradeDamage = 0;
     public int money;
+    public int upgradeGPM = 1;
 
     bool isDead = false;
 
@@ -35,6 +36,9 @@ public class TankManager : DestructablePewPewTankObject
 
     public float timer = 20;
     int waitingTime = 0;
+     
+    float moneyTimer = 0;
+    int moneyWait = 1;
     bool check = true;
 
     void Start ()
@@ -69,7 +73,14 @@ public class TankManager : DestructablePewPewTankObject
         hp.text = this.health + " HP";
         movespeed.text = (baseMoveMultiplier + upgradeMoveMultiplier)+ " MS";
         damage.text = (baseDamage + upgradeDamage) + " DMG";
-        Money.text = "$" + money;
+        Money.text = "$" + gameMoney;
+
+        moneyTimer += Time.deltaTime;
+        if (moneyTimer > moneyWait)
+        {
+            gameMoney += upgradeGPM;
+            moneyTimer = 0;
+        }
 
         if (this.health <= 0)
         {
@@ -175,9 +186,5 @@ public class TankManager : DestructablePewPewTankObject
         Destroy(newRound);
     }
 
-    public void addCreepMoney()
-    {
-        money = money + 50;
-        
-    }
+
 }
