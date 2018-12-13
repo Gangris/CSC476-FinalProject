@@ -24,10 +24,18 @@ public class TankManager : DestructablePewPewTankObject
     public int upgradeDamage = 0;
     public int money;
 
+    bool isDead = false;
+
     public Text hp;
     public Text movespeed;
     public Text damage;
     public Text Money;
+    public Text DeathTime;
+    public GameObject panel;
+
+    public float timer = 20;
+    int waitingTime = 0;
+    bool check = true;
 
     void Start ()
 	{
@@ -49,6 +57,7 @@ public class TankManager : DestructablePewPewTankObject
         money = gameMoney;
         Money.text = "$" + money;
         Bootstrap();
+        //panel.gameObject.SetActive(false);
 	}
 	
 	void Update ()
@@ -61,6 +70,38 @@ public class TankManager : DestructablePewPewTankObject
         movespeed.text = (baseMoveMultiplier + upgradeMoveMultiplier)+ " MS";
         damage.text = (baseDamage + upgradeDamage) + " DMG";
         Money.text = "$" + money;
+
+        if (this.health <= 0)
+        {
+            isDead = true;
+            this.gameObject.transform.Translate(0f, 0f, 10f);
+        }
+        
+        if (isDead)
+        {
+            this.health = 0;
+            panel.gameObject.SetActive(true);
+            timer -= Time.deltaTime;
+            DeathTime.text = timer.ToString();
+            if (check)
+            {
+                this.gameObject.transform.position = new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, this.gameObject.transform.position.z - 30f);
+                check = false;
+            }
+            if (timer <= waitingTime)
+            {
+                isDead = false;
+                this.health = baseHealth + upgradeHealth;
+                this.gameObject.transform.position = new Vector3(-4.07f, -2.26f, -.4f);
+                check = true;
+                timer = 20;
+            }
+        }
+        else if (isDead == false)
+        {
+            panel.gameObject.SetActive(false);
+        }
+
     }
 
     void CenterCamera()

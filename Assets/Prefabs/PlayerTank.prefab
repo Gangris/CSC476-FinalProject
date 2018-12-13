@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 114353168128029280}
   m_Layer: 0
   m_Name: PlayerTank
-  m_TagString: Untagged
+  m_TagString: team1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -373,11 +373,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea7267e0377bfa540b0537255a159f2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  team: 1
+  health: 100
+  maxHealth: 100
+  gameMoney: 50
+  healthBar: {fileID: 0}
+  round: {fileID: 0}
   rb: {fileID: 0}
   tankBody: {fileID: 0}
   tankTurret: {fileID: 0}
-  baseMoveMultiplyer: 4
-  upgradeMoveMultiplyer: 0
+  playerRounds: []
+  baseMoveMultiplier: 4
+  upgradeMoveMultiplier: 0
+  baseRoundVelocity: 4
+  upgradeRoundVelocity: 0
+  baseRoundDuration: 1
+  upgradeRoundDuration: 0
+  baseHealth: 1000
+  upgradeHealth: 0
+  baseDamage: 50
+  upgradeDamage: 0
+  money: 0
+  hp: {fileID: 0}
+  movespeed: {fileID: 0}
+  damage: {fileID: 0}
+  Money: {fileID: 0}
+  DeathTime: {fileID: 0}
+  panel: {fileID: 0}
+  timer: 20
 --- !u!114 &114958873411347072
 MonoBehaviour:
   m_ObjectHideFlags: 1

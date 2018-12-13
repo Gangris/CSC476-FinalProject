@@ -322,6 +322,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Constants.cs" />
+    <Compile Include="Assets\Scripts\Creep.cs" />
     <Compile Include="Assets\Scripts\CreepManager.cs" />
     <Compile Include="Assets\Scripts\DestructablePewPewTankObject.cs" />
     <Compile Include="Assets\Scripts\PewPewTankObject.cs" />

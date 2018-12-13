@@ -10,7 +10,6 @@ public class TurretManager : DestructablePewPewTankObject
 
     public string enemyTeam;
     public int turretDamage = 100;
-
     float timer = 0;
     int waitingTime = 2;
 
